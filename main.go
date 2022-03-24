@@ -4,17 +4,14 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-//	"os"
 
 	"github.com/line/line-bot-sdk-go/v7/linebot"
 )
 
 func main() {
 	bot, err := linebot.New(
-		//os.Getenv("CHANNEL_SECRET"),
-		//os.Getenv("CHANNEL_TOKEN"),
-        "e0fca7fa7bd74ac93fd14c8fcec2c12e",
-        "JX8eE8e8WzXBajYpHzYIe4W5mxeCLBbcYdcLBSZkbX00rBikrPkL272gpTfYg8UTQ3YJj0sfUoLDvc6GHHpahIPDG67WYFxUSo5C1Geq7mFNPGf2zuVdI8FaS2NoZSfmyveSwmSAUUaXm2a0tTi6rgdB04t89/1O/w1cDnyilFU=",
+		  "CHANNEL_SECRET",//発行されたチャネルシークレット
+		  "CHANNEL_TOKEN", //発行されたチャネルアクセストークン
 	)
 	if err != nil {
 		log.Fatal(err)
