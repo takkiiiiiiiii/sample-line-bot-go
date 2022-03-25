@@ -10,8 +10,8 @@ import (
 
 func main() {
 	bot, err := linebot.New(
-		  "e0fca7fa7bd74ac93fd14c8fcec2c12e",//発行されたチャネルシークレット
-		  "JX8eE8e8WzXBajYpHzYIe4W5mxeCLBbcYdcLBSZkbX00rBikrPkL272gpTfYg8UTQ3YJj0sfUoLDvc6GHHpahIPDG67WYFxUSo5C1Geq7mFNPGf2zuVdI8FaS2NoZSfmyveSwmSAUUaXm2a0tTi6rgdB04t89/1O/w1cDnyilFU=", //発行されたチャネルアクセストークン
+		  "???????????",//発行されたチャネルシークレット
+		  "???????????", //発行されたチャネルアクセストークン
 	)
 	if err != nil {
 		log.Fatal(err)
