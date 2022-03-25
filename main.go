@@ -10,15 +10,15 @@ import (
 
 func main() {
 	bot, err := linebot.New(
-		  "CHANNEL_SECRET",//発行されたチャネルシークレット
-		  "CHANNEL_TOKEN", //発行されたチャネルアクセストークン
+		  "e0fca7fa7bd74ac93fd14c8fcec2c12e",//発行されたチャネルシークレット
+		  "JX8eE8e8WzXBajYpHzYIe4W5mxeCLBbcYdcLBSZkbX00rBikrPkL272gpTfYg8UTQ3YJj0sfUoLDvc6GHHpahIPDG67WYFxUSo5C1Geq7mFNPGf2zuVdI8FaS2NoZSfmyveSwmSAUUaXm2a0tTi6rgdB04t89/1O/w1cDnyilFU=", //発行されたチャネルアクセストークン
 	)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// Setup HTTP Server for receiving requests from LINE platform
-	http.HandleFunc("/callback", func(w http.ResponseWriter, req *http.Request) {
+	parrot := func(w http.ResponseWriter, req *http.Request) {
 		events, err := bot.ParseRequest(req)
 		if err != nil {
 			if err == linebot.ErrInvalidSignature {
@@ -47,7 +47,8 @@ func main() {
 				}
 			}
 		}
-	})
+	}
+	http.HandleFunc("/callback",parrot)
 	// This is just sample code.
 	// For actual use, you must support HTTPS by using `ListenAndServeTLS`, a reverse proxy or something else.
 	if err := http.ListenAndServe(":9090", nil); err != nil {
