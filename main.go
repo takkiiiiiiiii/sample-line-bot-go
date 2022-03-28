@@ -25,7 +25,7 @@ type shop struct {
 }
 
 func getRestInfo(lat string, lng string) string {
-	apikey := "e937fa83d59190c6"
+	apikey := "APIキー"
 	url := fmt.Sprintf("https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=%s&format=json&lat=%s&lng=%s", apikey, lat, lng)
 	//リクエストしてボディを取得
 	resp, err := http.Get(url) //Get Method issues a Get to the specified URL（httpリクエストのに対するレスポンスを返す）
